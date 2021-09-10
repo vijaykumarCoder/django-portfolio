@@ -1,0 +1,11 @@
+{% for o in objects %}
+    <p>{{o}}</p>    
+{% endfor %}
+
+{% if objects.has_previous %}
+<a href="{%url 'pagePage' %}?page={{objects.previous_page_number}}" >Previous</a>
+{% endif %}
+
+{% if objects.has_next %}
+    <a href="{% url 'pagePage' %}?page={{objects.next_page_number}}">Next</a>
+{% endif %}
